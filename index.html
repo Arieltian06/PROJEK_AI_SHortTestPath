@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UNIB Maps — Dijkstra Navigator</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Peta fullscreen -->
+  <div id="map"></div>
+
+  <!-- Toast notifikasi -->
+  <div class="toast" id="toast"></div>
+
+  <!-- Hint awal (muncul saat belum ada klik) -->
+  <div class="hint-bar" id="hintBar">
+    🗺️ Klik titik pada peta untuk menentukan rute
+  </div>
+
+  <!-- Panel rute (muncul setelah klik titik pertama/kedua) -->
+  <div class="route-panel" id="routePanel">
+    <div class="route-panel-inner">
+      <div class="rp-row">
+        <div class="search-dot origin"></div>
+        <div class="rp-label" id="rpStart">Pilih titik asal...</div>
+        <button class="rp-clear-btn" id="rpClearBtn" onclick="resetRoute()">✕</button>
+      </div>
+      <div class="rp-divider"></div>
+      <div class="rp-row">
+        <div class="search-dot dest"></div>
+        <div class="rp-label" id="rpEnd">Klik titik tujuan...</div>
+      </div>
+    </div>
+    <!-- Mode transportasi -->
+    <div class="mode-selector">
+      <button class="mode-btn active" data-mode="walk">🚶 Jalan Kaki</button>
+      <button class="mode-btn" data-mode="motor">🏍️ Motor</button>
+      <button class="mode-btn" data-mode="car">🚗 Mobil</button>
+    </div>
+    <!-- Detail rute melayang di bawah panel -->
+    <div class="route-detail" id="routeDetail">
+      <div class="route-detail-content" id="sheetContent"></div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
