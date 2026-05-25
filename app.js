@@ -13,8 +13,13 @@ const NODES = {
   lptik       : { name: "LPTIK UNIB",             lat: -3.75843, lng: 102.27493, iconType: "tech" },
   kedokteran  : { name: "Fakultas Kedokteran",    lat: -3.75505, lng: 102.27797, routingLat: -3.75505, routingLng: 102.27797, iconType: "medical" },
   mipa        : { name: "Dekanat MIPA",           lat: -3.7560482, lng: 102.2748329, iconType: "science" },
+<<<<<<< HEAD
   fteknik     : { name: "Dekanat Teknik",         lat: -3.75850, lng: 102.27666, routingLat: -3.75850, routingLng: 102.2764, iconType: "engineering" },
   lab_terpadu : { name: "Laboratorium Teknik",    lat: -3.75893, lng: 102.27692, routingLat: -3.75893, routingLng: 102.2764, iconType: "chemistry" },
+=======
+  fteknik     : { name: "Dekanat Teknik",         lat: -3.75863, lng: 102.27666, routingLat: -3.75863, routingLng: 102.2764, iconType: "engineering" },
+  lab_terpadu : { name: "Laboratorium Teknik",    lat: -3.75895, lng: 102.27684, routingLat: -3.75895, routingLng: 102.2764, iconType: "chemistry" },
+>>>>>>> 133608c47a4bfa9defe0c69509933de260a2bb81
   stadion     : { name: "Stadion UNIB",           lat: -3.75770, lng: 102.27806, iconType: "stadium" },
   fpertanian  : { name: "Dekanat Fakultas Pertanian", lat: -3.7595750, lng: 102.2691479, iconType: "agriculture" },
   fkip        : { name: "Dekanat FKIP",           lat: -3.75768, lng: 102.27498, iconType: "education" },
@@ -344,11 +349,19 @@ async function loadGeoJsonCoordinates() {
           
           // Gunakan koordinat klik kustom eksak pengguna demi presisi maksimal
           if (id === 'fteknik') {
+<<<<<<< HEAD
             finalLat = -3.75850;
             finalLng = 102.27666;
           } else if (id === 'lab_terpadu') {
             finalLat = -3.75893;
             finalLng = 102.27692;
+=======
+            finalLat = -3.75863;
+            finalLng = 102.27666;
+          } else if (id === 'lab_terpadu') {
+            finalLat = -3.75895;
+            finalLng = 102.27684;
+>>>>>>> 133608c47a4bfa9defe0c69509933de260a2bb81
           } else if (id === 'kedokteran') {
             finalLat = -3.75505;
             finalLng = 102.27797;
