@@ -13,8 +13,8 @@ const NODES = {
   lptik       : { name: "LPTIK UNIB",             lat: -3.75843, lng: 102.27493, iconType: "tech" },
   kedokteran  : { name: "Fakultas Kedokteran",    lat: -3.75505, lng: 102.27797, routingLat: -3.75505, routingLng: 102.27797, iconType: "medical" },
   mipa        : { name: "Dekanat MIPA",           lat: -3.7560482, lng: 102.2748329, iconType: "science" },
-  fteknik     : { name: "Dekanat Teknik",         lat: -3.75864, lng: 102.27663, routingLat: -3.75864, routingLng: 102.2764, iconType: "engineering" },
-  lab_terpadu : { name: "Laboratorium Teknik",    lat: -3.75894, lng: 102.27677, routingLat: -3.75894, routingLng: 102.2764, iconType: "chemistry" },
+  fteknik     : { name: "Dekanat Teknik",         lat: -3.75864, lng: 102.27660, routingLat: -3.75864, routingLng: 102.27660, iconType: "engineering" },
+  lab_terpadu : { name: "Laboratorium Teknik",    lat: -3.75895, lng: 102.27678, routingLat: -3.75895, routingLng: 102.27678, iconType: "chemistry" },
   stadion     : { name: "Stadion UNIB",           lat: -3.75770, lng: 102.27806, iconType: "stadium" },
   fpertanian  : { name: "Dekanat Fakultas Pertanian", lat: -3.7595750, lng: 102.2691479, iconType: "agriculture" },
   fkip        : { name: "Dekanat FKIP",           lat: -3.75768, lng: 102.27498, iconType: "education" },
@@ -345,10 +345,10 @@ async function loadGeoJsonCoordinates() {
           // Gunakan koordinat klik kustom eksak pengguna demi presisi maksimal
           if (id === 'fteknik') {
             finalLat = -3.75864;
-            finalLng = 102.27663;
+            finalLng = 102.27660;
           } else if (id === 'lab_terpadu') {
-            finalLat = -3.75894;
-            finalLng = 102.27677;
+            finalLat = -3.75895;
+            finalLng = 102.27678;
           } else if (id === 'kedokteran') {
             finalLat = -3.75505;
             finalLng = 102.27797;
@@ -384,14 +384,9 @@ async function loadGeoJsonCoordinates() {
           NODES[id].lat = finalLat;
           NODES[id].lng = finalLng;
           
-          // Simpan koordinat perutean terpisah yang di-clamp agar OSRM selalu snap ke dalam kampus
-          if (id === 'fteknik' || id === 'lab_terpadu') {
-            NODES[id].routingLat = finalLat;
-            NODES[id].routingLng = Math.min(finalLng, 102.2764);
-          } else {
-            NODES[id].routingLat = finalLat;
-            NODES[id].routingLng = finalLng;
-          }
+          // Simpan koordinat perutean terpisah
+          NODES[id].routingLat = finalLat;
+          NODES[id].routingLng = finalLng;
           
           // Tetap gunakan nama asli untuk konsistensi UI
           if (id === 'masjid') {
